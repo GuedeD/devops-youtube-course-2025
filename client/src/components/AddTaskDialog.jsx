@@ -41,7 +41,7 @@ const AddTaskDialog = ({ onClose, onSubmit }) => {
       if (result.success) {
         // Dialog will be closed by parent component
       } else {
-        setError(result.error || 'Failed to create task');
+        setError(result.error || 'Failed to create task 1');
       }
     } catch (err) {
       console.log(err);
