@@ -1,9 +1,9 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL;
-
 class TaskService {
   async getAllTasks() {
-    const response = await fetch(`${API_BASE_URL}/api/tasks`);
-
+    console.log(`${API_BASE_URL}/tasks`);
+    const response = await fetch(`${API_BASE_URL}/tasks`);
+    console.log('=====>response', response);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -12,7 +12,7 @@ class TaskService {
   }
 
   async createTask(taskData) {
-    const response = await fetch(`${API_BASE_URL}/api/tasks`, {
+    const response = await fetch(`${API_BASE_URL}/tasks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ class TaskService {
   }
 
   async deleteTask(taskId) {
-    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
+    const response = await fetch(`${API_BASE_URL}/tasks/${taskId}`, {
       method: 'DELETE',
     });
 

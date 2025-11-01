@@ -1,3 +1,6 @@
+        VITE_API_URL: http://3.26.242.54:6000/api
+
+
 # Two services: backend API on 5000, frontend (nginx) on 80
 services:
   backend:
@@ -7,13 +10,13 @@ services:
     env_file:
       - ./server/.env
     ports:
-      - "8000:8000"
+      - "6000:6000"
 
   frontend:
     build:
       context: ./client
       args:
-        VITE_API_URL: http://localhost:8000/api
+        VITE_API_URL: http://localhost:6000/api
     container_name: frontend
     restart: always
     ports:
