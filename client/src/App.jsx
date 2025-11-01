@@ -17,7 +17,7 @@ function App() {
     fetchTasks();
   }, []);
 
-  let dema = 'unused variable here ';
+  // let dema = 'unused variable here ';
 
   const fetchTasks = async () => {
     try {
